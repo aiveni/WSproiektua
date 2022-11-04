@@ -27,9 +27,31 @@ for(let i=0; i<teamID.length;i++){//20
     }
 
 }
-
-
-
 })
 
-premiare.json
+
+//5.2 Atributu baten izena aldatu
+fetch('premier.json')
+.then(r => r.json())
+.then(data => {
+    let jsonString = JSON.stringify( data );
+
+    jsonString = jsonString.split('"dateOfBirth":').join('"birthDate":');
+
+    let json2 = JSON.parse(jsonString)
+})
+
+//5.3 Atributu baten balioak aldatu
+fetch('premier.json')
+.then(r => r.json())
+.then(data => {
+    let jsonString = JSON.stringify( data );
+
+    jsonString = jsonString.split('"Offence"').join('"FW"');
+    jsonString = jsonString.split('"Goalkeeper"').join('"GK"');
+    jsonString = jsonString.split('"Midfield"').join('"MF"');
+    jsonString = jsonString.split('"Defence"').join('"DF"');
+
+    let json3 = JSON.parse(jsonString)
+    console.log(json3)
+})
