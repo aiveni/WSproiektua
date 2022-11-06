@@ -15,16 +15,13 @@ let teamID= (data.teams.map(a=>{return a.id})) //teamId guztiak arrayan sartu
 let leagueID=2021
 //console.log(leagueID)
 
-console.log(data)
-
 //data.teams[0].squad[0]+={"teamID":teamID[0]}
 
-//nola sartu jsonean atributuak?
 for(let i=0; i<teamID.length;i++){//20
 
-    for(let z=0; i<data.teams[i].squads.length;z++){//22
+   // for(let z=0; i<data.teams[i].squads.length;z++){//22
         //data.teams[i].squad[z]={}
-    }
+    //}
 
 }
 })
@@ -39,6 +36,7 @@ fetch('premier.json')
     jsonString = jsonString.split('"dateOfBirth":').join('"birthDate":');
 
     let json2 = JSON.parse(jsonString)
+    
 })
 
 //5.3 Atributu baten balioak aldatu
